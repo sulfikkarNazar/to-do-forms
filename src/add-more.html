@@ -1,0 +1,49 @@
+<div class="form-add-more">
+    <div class="add-more-btn" ng-click="toggleAddMore()">
+        <span class="add-more-arrow"><i class="fa fa-arrow-down"></i></span>
+        <span class="add-more-span">Add more</span>
+    </div>
+
+    <div class="add-more-data" ng-show="showAddMoreData">
+        <div class="add-more-form">
+            <div class="form-item row-fields-width">
+                <label for="gst" class="second-row-label">GST</label>
+                <input type="text" id="gst" ng-model="lead.gst" class="form-control" placeholder="GST Registration Number">
+            </div>
+            <div class="form-item row-fields-width">
+                <label for="dob" class="second-row-label">DOB</label>
+                <input type="date" id="dob" ng-model="lead.dob" class="form-control" placeholder="DOB">
+            </div>
+            <div class="form-item row-fields-width">
+                <label for="pan" class="second-row-label">PAN</label>
+                <input type="text" id="pan" ng-model="lead.pan" class="form-control" placeholder="PAN Number">
+            </div>
+        </div>
+        <span>Billing Address</span>
+        <div ng-include="'address-fields.html'"></div>
+
+        <div class="form-address-options">
+            <div class="checkbox-container">
+              <div class="form-check" ng-repeat="option in addressOptions">
+                <input type="checkbox" class="form-check-input" id="{{option.id}}" ng-model="lead[option.id]">
+                <label class="form-check-label" for="{{option.id}}">{{option.label}}</label>
+              </div>
+            </div>
+            <div ng-include="'address-fields.html'"></div>
+        </div> 
+    </div>
+    <hr>
+    <div class="form-add-item">
+        <div class="checkbox-container">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="add-item" ng-model="lead.addItem">
+            <label class="form-check-label" for="add-item">Add Item</label>
+          </div>
+        </div>
+        <div class="add-item-data" ng-show="lead.addItem">
+            <div ng-include="'form-add-item.html'"></div>
+        </div>
+    </div>
+    <hr>
+
+</div>

@@ -1,0 +1,166 @@
+.form-container {
+    padding: 20px;
+}
+
+.new-lead-span {
+    width: 33%;
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    border-radius: 0px;
+}
+
+.form-group label {
+    margin-bottom: 0px;
+    margin-left: 5px;
+}
+
+.width-150 {
+    width: 150px !important;
+}
+
+.btn {
+    width: 100px;
+    height: 38px;
+    margin-top: 23px;
+    margin-right: 5px;
+}
+
+hr {
+    width: 100%;
+    margin-top: 15px;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+.first-row-label {
+    font-size: 13px;
+}
+
+.second-row-label {
+    font-size: 15px;
+}
+
+.required-field:after {
+    content: "*";
+    color: red;
+    margin-left: 3px;
+}
+
+.input-group-text{
+    background-color: white !important;
+    color: #a1a1a1 !important;
+}
+
+.row-fields-width {
+    width: 15%;
+}
+
+.row-first-field-width {
+    width: 18%;
+}
+
+.row-number-fields-width {
+    width: 7.2%;
+}
+
+.input-name-search {
+    background-color: #007bff !important;
+    color: white !important;
+}
+
+.width-50-percent {
+    width: 50% !important;
+}
+
+.referral-container {
+    display: flex;
+}
+
+.referral-field-width {
+    margin-left: 15px;
+    width: 46%;
+}
+
+.form-sections label {
+    font-size: 16px;
+}
+
+.disabled-icon {
+    background-color: #e9ecef !important;
+}
+
+.checkbox-container {
+    display: flex;
+    gap: 8%;
+}
+  
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.form-check-label {
+    margin-left: 10px;
+}
+
+.form-add-more {
+    margin-top: 40px;
+}
+
+.add-more-btn {
+    cursor: pointer;
+    color: #007bff;
+}
+
+.form-add-item {
+    margin-left: 60px;
+    margin-top:30px;
+}
+
+.add-more-data {
+    margin-left: 40px;
+}
+
+.add-more-form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+}
+
+.address-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.address-fields-width {
+    width: 10%;
+}
+ 
+.add-item-form-check {
+    margin-top: 30px !important;
+}
+
+.product-div {
+    margin-left: 10px;
+}
+
+.m-b-0 {
+    margin-bottom: 0px !important;
+}
