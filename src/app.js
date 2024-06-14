@@ -92,10 +92,10 @@ app.controller('FormController', ['$scope', function($scope) {
   $scope.all = { count: 14918, amount: '1,30,99,543', color: '#a448cb' };
 
   $scope.enquiries = [
-    { nameLoc: 'BRUCE WAYNE', userStatus: 'Alfred P', type: 'Follow-Up call', remarks: 'Purchased', amount: '10,000', created: '11 June', updated: '11 June', followUp: '11 June', source: 'Walk in' },
-    { nameLoc: 'CLARK KENT', userStatus: 'Jonathan K', type: 'Follow-Up call', remarks: 'Enquiry', amount: '9450', created: '11 June', updated: '11 June', followUp: '11 June', source: 'Walk in' },
-    { nameLoc: 'DIANA PRINCE', userStatus: 'Bruce W', type: 'Follow-Up call', remarks: 'Switched Off', amount: '9000', created: '12 June', updated: '13 June', followUp: '13 June', source: 'Field visit' },
-    { nameLoc: 'HAL JORDAN', userStatus: 'Bruce W', type: 'Follow-Up call', remarks: 'Call not connected', amount: '5000', created: '12 June', updated: '13 June', followUp: '14 June', source: 'Field visit' },
-    { nameLoc: 'LEX LUTHOR', userStatus: 'Lex corp', type: 'Follow-Up call', remarks: 'Purchased', amount: '10,000', created: '12 June', updated: '13 June', followUp: '14 June', source: 'Walk in' },
+    { nameLoc: 'BRUCE WAYNE', userStatus: 'Alfred P', activityStatus: 'Quotation given', type: 'Follow-Up call', remarks: 'Purchased', amount: '10,000', created: '11 June', updated: '11 June', followUp: '11 June', source: 'Walk in' },
+    { nameLoc: 'CLARK KENT', userStatus: 'Jonathan K', activityStatus: 'Quotation given', type: 'Follow-Up call', remarks: 'Enquiry', amount: '9450', created: '11 June', updated: '11 June', followUp: '11 June', source: 'Walk in' },
+    { nameLoc: 'DIANA PRINCE', userStatus: 'Bruce W', activityStatus: 'Active', type: 'Follow-Up call', remarks: 'Switched Off', amount: '9000', created: '12 June', updated: '13 June', followUp: '13 June', source: 'Field visit' },
+    { nameLoc: 'HAL JORDAN', userStatus: 'Bruce W', activityStatus: 'Active', type: 'Follow-Up call', remarks: 'Call not connected', amount: '5000', created: '12 June', updated: '13 June', followUp: '14 June', source: 'Field visit' },
+    { nameLoc: 'LEX LUTHOR', userStatus: 'Lex corp', activityStatus: 'site visit', type: 'Follow-Up call', remarks: 'Purchased', amount: '10,000', created: '12 June', updated: '13 June', followUp: '14 June', source: 'Walk in' },
   ];
 }]);
