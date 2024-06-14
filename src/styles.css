@@ -164,3 +164,93 @@ hr {
 .m-b-0 {
     margin-bottom: 0px !important;
 }
+
+.static-field-div {
+    width: 90%;
+    margin-top: 0;
+    padding-right: 10px;
+    pointer-events: none;
+}
+
+.static-field {
+    margin-left: 30px;
+    border: 1px solid #ced4da;
+}
+
+.right-side-inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0;
+    padding-left: 65%;
+}
+
+.right-side-inputs .address-item {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.right-side-inputs .second-row-label {
+    flex: 3;
+    margin-right: 10px;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.right-side-inputs .form-control {
+    flex: 2;
+    width: 100%;
+}
+
+.right-input-fields-width {
+   width: 88%; 
+}
+
+.display-flex {
+    display: flex;
+}
+
+.right-side-inputs .radio-buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 45px;
+}
+
+.right-side-inputs .radio-buttons input[type="radio"] {
+    margin-right: 5px;
+}
+
+.right-side-inputs .radio-buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 55px;
+}
+
+.right-side-inputs .radio-buttons .second-row-label {
+    margin-right: 30px;
+}
+
+.right-side-inputs .radio-buttons .radio-button-group {
+    display: flex;
+    align-items: center;
+}
+
+.right-side-inputs .form-control {
+    width: 100%;
+}
+
+.radio-button-input-label {
+    margin-right: 30px;
+}
+
+#grandTotal {
+    background-color: lightgreen;
+}
+
+.discount-radio-label {
+    font-size: 17px;
+    font-weight: 500;
+}

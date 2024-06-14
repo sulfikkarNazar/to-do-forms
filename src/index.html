@@ -3,267 +3,273 @@
 <head>
   <title>ToDo</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="enquiry-browse.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous">
 </head>
 <body ng-controller="FormController">
     <app-root></app-root>
     <div class="form-container">
-      <form ng-submit="submitForm()">
-        <div class="form-group">
-            <span class="new-lead-span">New Lead</span>
-            <div class="form-item">
-                <label for="regions" class="first-row-label">Regions</label>
-                <select id="regions" ng-model="lead.region" class="form-control width-150" placeholder="Select Region">
-                  <option value="">Select region</option>
-                  <option value="region1">Region 1</option>
-                  <option value="region2">Region 2</option>
-                </select>
+      <div class="to-do-form" ng-show="showToDoForm">
+        <form ng-submit="submitForm()">
+          <div class="form-group">
+              <span class="new-lead-span">New Lead</span>
+              <div class="form-item">
+                  <label for="regions" class="first-row-label">Regions</label>
+                  <select id="regions" ng-model="lead.region" class="form-control width-150" placeholder="Select Region">
+                    <option value="">Select region</option>
+                    <option value="region1">Region 1</option>
+                    <option value="region2">Region 2</option>
+                  </select>
+              </div>
+              <div class="form-item">
+                  <label for="branches" class="first-row-label">Branch</label>
+                  <select id="branches" ng-model="lead.branch" class="form-control width-150" placeholder="Select Branch">
+                    <option value="">Select branch</option>
+                    <option value="branch1">Branch 1</option>
+                    <option value="branch2">Branch 2</option>
+                  </select>
+              </div>
+              <div class="form-item">
+                  <label for="assignedUser" class="first-row-label">Assigned User</label>
+                  <select id="assignedUser" ng-model="lead.assignedUser" class="form-control width-150" placeholder="Select Assigned User">
+                    <option value="">Select assigned user</option>
+                    <option value="user1">User 1</option>
+                      <option value="user2">User 2</option>
+                  </select>
+              </div>
+              <div class="form-item">
+                  <label for="tagUser" class="first-row-label">Tag User</label>
+                  <select id="tagUser" ng-model="lead.tagUser" class="form-control width-150" placeholder="Select Tag User">
+                    <option value="">Select tag user</option>  
+                    <option value="tag1">Tag 1</option>
+                    <option value="tag2">Tag 2</option>
+                  </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Add</button>
+              <button type="button" ng-click="closeForm()" class="btn btn-primary">Close</button>
+          </div>
+          <hr>
+          <div class="form-group">
+            <div class="form-item row-first-field-width">
+                <label for="name" class="second-row-label required-field">Name</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <input type="text" id="name" ng-model="lead.name" class="form-control" required placeholder="Client Name">
+                    <div class="input-group-append">
+                        <span class="input-group-text input-name-search">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class="form-item">
-                <label for="branches" class="first-row-label">Branch</label>
-                <select id="branches" ng-model="lead.branch" class="form-control width-150" placeholder="Select Branch">
-                  <option value="">Select branch</option>
-                  <option value="branch1">Branch 1</option>
-                  <option value="branch2">Branch 2</option>
-                </select>
-            </div>
-            <div class="form-item">
-                <label for="assignedUser" class="first-row-label">Assigned User</label>
-                <select id="assignedUser" ng-model="lead.assignedUser" class="form-control width-150" placeholder="Select Assigned User">
-                  <option value="">Select assigned user</option>
-                  <option value="user1">User 1</option>
-                    <option value="user2">User 2</option>
-                </select>
-            </div>
-            <div class="form-item">
-                <label for="tagUser" class="first-row-label">Tag User</label>
-                <select id="tagUser" ng-model="lead.tagUser" class="form-control width-150" placeholder="Select Tag User">
-                  <option value="">Select tag user</option>  
-                  <option value="tag1">Tag 1</option>
-                  <option value="tag2">Tag 2</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Add</button>
-            <button type="button" ng-click="closeForm()" class="btn btn-primary">Close</button>
-        </div>
-        <hr>
-        <div class="form-group">
-          <div class="form-item row-first-field-width">
-              <label for="name" class="second-row-label required-field">Name</label>
+            <div class="form-item row-fields-width">
+              <label for="primaryMobile" class="second-row-label required-field">Primary Mobile Number</label>
               <div class="input-group">
                   <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fa fa-user"></i></span>
+                      <span class="input-group-text"><i class="fa fa-mobile"></i></span>
                   </div>
-                  <input type="text" id="name" ng-model="lead.name" class="form-control" required placeholder="Client Name">
-                  <div class="input-group-append">
-                      <span class="input-group-text input-name-search">
-                          <i class="fa fa-search"></i>
-                      </span>
-                  </div>
+                  <input type="tel" id="primaryMobile" ng-model="lead.primaryMobile" class="form-control" required placeholder="Primary">
               </div>
           </div>
           <div class="form-item row-fields-width">
-            <label for="primaryMobile" class="second-row-label required-field">Primary Mobile Number</label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-mobile"></i></span>
-                </div>
-                <input type="tel" id="primaryMobile" ng-model="lead.primaryMobile" class="form-control" required placeholder="Primary">
-            </div>
+              <label for="secondaryMobile" class="second-row-label required-field">Secondary Mobile Number</label>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-mobile"></i></span>
+                  </div>
+                  <input type="tel" id="secondaryMobile" ng-model="lead.secondaryMobile" class="form-control" required placeholder="Secondary">
+              </div>
+          </div>
+          <div class="form-item row-fields-width">
+              <label for="whatsapp" class="second-row-label required-field">WhatsApp Number</label>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-mobile"></i></span>
+                  </div>
+                  <input type="tel" id="whatsapp" ng-model="lead.whatsapp" class="form-control" required placeholder="WhatsApp">
+              </div>
+          </div>
+          <div class="form-item row-fields-width">
+              <label for="outsideNumber" class="second-row-label">Outside Country Mobile #</label>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-mobile"></i></span>
+                  </div>
+                  <input type="tel" id="outsideNumber" ng-model="lead.outsideNumber" class="form-control" placeholder="Outside Country Mobile No.">
+              </div>
+          </div>
+          <div class="form-item row-fields-width">
+              <label for="email" class="second-row-label required-field">Email</label>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                  </div>
+                  <input type="email" id="email" ng-model="lead.email" class="form-control" required placeholder="Email">
+              </div>
+          </div>
         </div>
-        <div class="form-item row-fields-width">
-            <label for="secondaryMobile" class="second-row-label required-field">Secondary Mobile Number</label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-mobile"></i></span>
-                </div>
-                <input type="tel" id="secondaryMobile" ng-model="lead.secondaryMobile" class="form-control" required placeholder="Secondary">
-            </div>
-        </div>
-        <div class="form-item row-fields-width">
-            <label for="whatsapp" class="second-row-label required-field">WhatsApp Number</label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-mobile"></i></span>
-                </div>
-                <input type="tel" id="whatsapp" ng-model="lead.whatsapp" class="form-control" required placeholder="WhatsApp">
-            </div>
-        </div>
-        <div class="form-item row-fields-width">
-            <label for="outsideNumber" class="second-row-label">Outside Country Mobile #</label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-mobile"></i></span>
-                </div>
-                <input type="tel" id="outsideNumber" ng-model="lead.outsideNumber" class="form-control" placeholder="Outside Country Mobile No.">
-            </div>
-        </div>
-        <div class="form-item row-fields-width">
-            <label for="email" class="second-row-label required-field">Email</label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="far fa-envelope"></i></span>
-                </div>
-                <input type="email" id="email" ng-model="lead.email" class="form-control" required placeholder="Email">
-            </div>
-        </div>
-      </div>
 
-      <div class="form-group">
-        <div class="form-item row-first-field-width">
-            <label for="location" class="second-row-label">Location</label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-map-marker-alt"></i></span>
-                </div>
-                <input type="text" id="location" ng-model="lead.location" class="form-control" placeholder="Location">
-            </div>
-        </div>
-        <div class="form-item row-fields-width">
-          <label for="propType" class="second-row-label required-field">Property Type</label>
-          <select id="propType" ng-model="lead.propType" class="form-control" placeholder="Select type">
-            <option value="">Select type</option>
-            <option value="villa">Villa</option>
-            <option value="apartment">Apartment</option>
-          </select>
-        </div>
-        <div class="form-item row-fields-width">
-          <label for="propStatus" class="second-row-label required-field">Property Status</label>
-          <select id="propStatus" ng-model="lead.propStatus" class="form-control" placeholder="Select status">
-            <option value="">Select status</option>
-            <option value="active">Active</option>
-            <option value="inactive">In-active</option>
-          </select>
-        </div>
-        <div class="form-item row-number-fields-width">
-          <label for="area" class="second-row-label">Area(Sq.Ft)</label>
-          <input type="number" id="area" ng-model="lead.area" class="form-control">
-        </div>
-        <div class="form-item row-number-fields-width">
-          <label for="size" class="second-row-label">Size</label>
-          <input type="number" id="size" ng-model="lead.size" class="form-control">
-        </div>
-        <div class="form-item row-fields-width">
-            <label for="occupation" class="second-row-label">Occupation</label>
-            <select id="occupation" ng-model="lead.occupation" class="form-control">
-              <option value="">Select occupation</option>
-              <option value="student">Student</option>
-              <option value="contractor">Contractor</option>
-              <option value="self-employed">Self Employed</option>
+        <div class="form-group">
+          <div class="form-item row-first-field-width">
+              <label for="location" class="second-row-label">Location</label>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-map-marker-alt"></i></span>
+                  </div>
+                  <input type="text" id="location" ng-model="lead.location" class="form-control" placeholder="Location">
+              </div>
+          </div>
+          <div class="form-item row-fields-width">
+            <label for="propType" class="second-row-label required-field">Property Type</label>
+            <select id="propType" ng-model="lead.propType" class="form-control" placeholder="Select type">
+              <option value="">Select type</option>
+              <option value="villa">Villa</option>
+              <option value="apartment">Apartment</option>
             </select>
-        </div>
-        <div class="form-item row-fields-width">
-            <label for="expClosure" class="second-row-label required-field">Exp.Closure</label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="far fa-calendar"></i></span>
-                </div>
-                <input id="expClosure" ng-model="lead.expClosure" class="form-control" required placeholder="Select date">
-            </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="form-item row-first-field-width">
-            <label for="followUpDate" class="second-row-label required-field">Follow-up date</label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="far fa-calendar"></i></span>
-                </div>
-                <input type="text" id="followUpDate" ng-model="lead.followUpDate" class="form-control">
-            </div>
-        </div>
-        <div class="form-item row-fields-width">
-          <label for="followUpTime" class="second-row-label">Follow-up time</label>
-          <input type="time" id="followUpTime" ng-model="lead.followUpTime" class="form-control">
-        </div>
-        <div class="form-item row-fields-width">
-          <label for="followUPdate" class="second-row-label required-field">Follow-up type</label>
-          <select id="followUPdate" ng-model="lead.followUPdate" class="form-control">
-            <option value="">Select type</option>
-            <option value="cold">Cold</option>
-            <option value="warm">Warm</option>
-            <option value="hot">Hot</option>
-          </select>
-        </div>
-        <div class="form-item row-fields-width">
-          <label for="budget" class="second-row-label">Budget</label>
-          <select id="budget" ng-model="lead.budget" class="form-control">
-            <option value="">Select budget</option>
-            <option value="1">1000 - 10000</option>
-            <option value="2">50000 - 100000</option>
-          </select>
-        </div>
-        <div class="form-item row-fields-width">
-            <label for="source" class="second-row-label">Source</label>
-            <select id="source" ng-model="lead.source" class="form-control">
-              <option value="">Select source</option>
-              <option value="referral">Referral</option>
-              <option value="walk-in">Walk in</option>
-              <option value="others">Others</option>
+          </div>
+          <div class="form-item row-fields-width">
+            <label for="propStatus" class="second-row-label required-field">Property Status</label>
+            <select id="propStatus" ng-model="lead.propStatus" class="form-control" placeholder="Select status">
+              <option value="">Select status</option>
+              <option value="active">Active</option>
+              <option value="inactive">In-active</option>
             </select>
+          </div>
+          <div class="form-item row-number-fields-width">
+            <label for="area" class="second-row-label">Area(Sq.Ft)</label>
+            <input type="number" id="area" ng-model="lead.area" class="form-control">
+          </div>
+          <div class="form-item row-number-fields-width">
+            <label for="size" class="second-row-label">Size</label>
+            <input type="number" id="size" ng-model="lead.size" class="form-control">
+          </div>
+          <div class="form-item row-fields-width">
+              <label for="occupation" class="second-row-label">Occupation</label>
+              <select id="occupation" ng-model="lead.occupation" class="form-control">
+                <option value="">Select occupation</option>
+                <option value="student">Student</option>
+                <option value="contractor">Contractor</option>
+                <option value="self-employed">Self Employed</option>
+              </select>
+          </div>
+          <div class="form-item row-fields-width">
+              <label for="expClosure" class="second-row-label required-field">Exp.Closure</label>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="far fa-calendar"></i></span>
+                  </div>
+                  <input id="expClosure" ng-model="lead.expClosure" class="form-control" required placeholder="Select date">
+              </div>
+          </div>
         </div>
-        <div class="form-item row-fields-width">
-          <label for="activityStatus" class="second-row-label">Activity Status</label>
-          <select id="activityStatus" ng-model="lead.activityStatus" class="form-control">
-            <option value="">Select status</option>
-            <option value="follow-up">Follow up</option>
-            <option value="lost">Lost</option>
-          </select>
-        </div>
-      </div>
 
-      <div class="form-group">
-        <div class="text-area-container width-50-percent">
-          <label for="remarks" class="second-row-label">Activity Remarks</label>
-          <textarea id="remarks" ng-model="lead.remarks" class="form-control remarks-textarea" placeholder="Add your text here..."></textarea>
+        <div class="form-group">
+          <div class="form-item row-first-field-width">
+              <label for="followUpDate" class="second-row-label required-field">Follow-up date</label>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="far fa-calendar"></i></span>
+                  </div>
+                  <input type="text" id="followUpDate" ng-model="lead.followUpDate" class="form-control">
+              </div>
+          </div>
+          <div class="form-item row-fields-width">
+            <label for="followUpTime" class="second-row-label">Follow-up time</label>
+            <input type="time" id="followUpTime" ng-model="lead.followUpTime" class="form-control">
+          </div>
+          <div class="form-item row-fields-width">
+            <label for="followUPdate" class="second-row-label required-field">Follow-up type</label>
+            <select id="followUPdate" ng-model="lead.followUPdate" class="form-control">
+              <option value="">Select type</option>
+              <option value="cold">Cold</option>
+              <option value="warm">Warm</option>
+              <option value="hot">Hot</option>
+            </select>
+          </div>
+          <div class="form-item row-fields-width">
+            <label for="budget" class="second-row-label">Budget</label>
+            <select id="budget" ng-model="lead.budget" class="form-control">
+              <option value="">Select budget</option>
+              <option value="1">1000 - 10000</option>
+              <option value="2">50000 - 100000</option>
+            </select>
+          </div>
+          <div class="form-item row-fields-width">
+              <label for="source" class="second-row-label">Source</label>
+              <select id="source" ng-model="lead.source" class="form-control">
+                <option value="">Select source</option>
+                <option value="referral">Referral</option>
+                <option value="walk-in">Walk in</option>
+                <option value="others">Others</option>
+              </select>
+          </div>
+          <div class="form-item row-fields-width">
+            <label for="activityStatus" class="second-row-label">Activity Status</label>
+            <select id="activityStatus" ng-model="lead.activityStatus" class="form-control">
+              <option value="">Select status</option>
+              <option value="follow-up">Follow up</option>
+              <option value="lost">Lost</option>
+            </select>
+          </div>
         </div>
-        <div class="referral-container width-50-percent">
-          <div class="referral-field-width">
-            <label for="referredBy" class="second-row-label required-field">Referred By</label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="fa fa-user"></i></span>
-                </div>
-                <input type="text" id="referredBy" ng-model="lead.referredBy" class="form-control" disabled required>
-                <div class="input-group-append">
-                    <span class="input-group-text input-name-search">
-                      <i class="fa fa-search"></i>
-                    </span>
-                </div>
+
+        <div class="form-group">
+          <div class="text-area-container width-50-percent">
+            <label for="remarks" class="second-row-label">Activity Remarks</label>
+            <textarea id="remarks" ng-model="lead.remarks" class="form-control remarks-textarea" placeholder="Add your text here..."></textarea>
+          </div>
+          <div class="referral-container width-50-percent">
+            <div class="referral-field-width">
+              <label for="referredBy" class="second-row-label required-field">Referred By</label>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                  </div>
+                  <input type="text" id="referredBy" ng-model="lead.referredBy" class="form-control" disabled required>
+                  <div class="input-group-append">
+                      <span class="input-group-text input-name-search">
+                        <i class="fa fa-search"></i>
+                      </span>
+                  </div>
+              </div>
+            </div>
+            <div class="referral-field-width ">
+              <label for="referenceType" class="second-row-label required-field">Reference type</label>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-cog"></i></span>
+                  </div>
+                  <input type="text" id="referenceType" ng-model="lead.referenceType" class="form-control" disabled required>
+                  <div class="input-group-append">
+                      <span class="input-group-text input-name-search">
+                          <i class="fa fa-plus"></i>
+                      </span>
+                  </div>
+              </div>
             </div>
           </div>
-          <div class="referral-field-width ">
-            <label for="referenceType" class="second-row-label required-field">Reference type</label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-cog"></i></span>
-                </div>
-                <input type="text" id="referenceType" ng-model="lead.referenceType" class="form-control" disabled required>
-                <div class="input-group-append">
-                    <span class="input-group-text input-name-search">
-                        <i class="fa fa-plus"></i>
-                    </span>
-                </div>
+        </div>
+
+        <div class="form-sections">
+          <label class="second-row-label required-field">SECTIONS</label>
+          <div class="checkbox-container">
+            <div class="form-check" ng-repeat="option in sections">
+              <input type="checkbox" class="form-check-input" id="{{option.id}}" ng-model="lead[option.id]">
+              <label class="form-check-label" for="{{option.id}}">{{option.label}}</label>
             </div>
           </div>
-        </div>
+        </div>      
+
+        <div ng-include="'add-more.html'"></div>
+        </form>
       </div>
-
-      <div class="form-sections">
-        <label class="second-row-label required-field">SECTIONS</label>
-        <div class="checkbox-container">
-          <div class="form-check" ng-repeat="option in sections">
-            <input type="checkbox" class="form-check-input" id="{{option.id}}" ng-model="lead[option.id]">
-            <label class="form-check-label" for="{{option.id}}">{{option.label}}</label>
-          </div>
-        </div>
-      </div>      
-
-      <div ng-include="'add-more.html'"></div>
-    </form>
-  </div>
+      <div class="enquiry-list" ng-show="!showToDoForm">
+        <div ng-include="'enq-list-view/enquiry-browse.html'"></div>
+      </div>
+    </div>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
   <script src="app.js"></script>
 </body>

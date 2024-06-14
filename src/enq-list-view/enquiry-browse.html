@@ -1,0 +1,133 @@
+<div class="enquiry-browse-container">
+    <div class="form-group">
+        <span class="span-enquiries m-t-25">Enquiries</span>
+        <span class="span-enquiries-details m-t-30">[14918, with the value of 13,099,464]</span>
+
+        <div class="checkbox-container m-t-25">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="lostEnquiries" ng-model="lead.lostEnquiries">
+                <label class="form-check-label" for="lostEnquiries">Lost Enquiries</label>
+            </div>
+        </div>
+        <button type="button" class="btn btn-danger pre-enquiry-btn" ng-click="prevPage()">Pre - Enquiry</button>
+        <button type="button" class="btn btn-success">Export</button>
+        <button type="button" class="btn btn-danger">Enquiry</button>
+        <div class="form-item">
+            <select id="userType" ng-model="lead.userType" class="enquiry-browse-input p-b-10 m-t-25 width-150">
+              <option value="">Select user type</option>
+              <option value="guest">Guest</option>
+              <option value="admin">Admin</option>
+              <option value="employee">Employee</option>
+            </select>
+        </div>
+        <div class="form-item">
+            <select id="update" ng-model="lead.update" class="enquiry-browse-input p-b-10 m-t-25 width-150">
+              <option value="">Last update</option>
+              <option value="day">1 day ago</option>
+              <option value="week">1 week ago</option>
+              <option value="month">1 month ago</option>
+            </select>
+        </div>
+        <div class="form-item">
+            <input type="text" id="fromDate" ng-model="lead.fromDate" class="enquiry-browse-input p-b-5 m-t-25 width-150" placeholder="From Date">
+        </div>
+        <div class="form-item">
+            <input type="text" id="toDate" ng-model="lead.toDate" class="enquiry-browse-input p-b-5 m-t-25 width-150" placeholder="To Date">
+        </div>
+    </div>
+
+    <div class="form-group" ng-controller="FormController">
+        <div class="first-status-div enquiry-status-div" style="background-color: {{todayFollowUp.color}}">
+            <span class="status-text-color block-span">TODAY'S FOLLOW UP ({{todayFollowUp.count}})</span>
+            <span class="status-text-color block-span m-t-15">{{todayFollowUp.amount}}</span>
+        </div>
+        <div class="status-div-width enquiry-status-div" style="background-color: {{pending.color}}">
+            <span class="status-text-color block-span">PENDING ({{pending.count}})</span>
+            <span class="status-text-color block-span m-t-15">{{pending.amount}}</span>
+        </div>
+        <div class="status-div-width enquiry-status-div" style="background-color: {{thisWeek.color}}">
+            <span class="status-text-color block-span">THIS WEEK ({{thisWeek.count}})</span>
+            <span class="status-text-color block-span m-t-15">{{thisWeek.amount}}</span>
+        </div>
+        <div class="status-div-width enquiry-status-div" style="background-color: {{upcoming.color}}">
+            <span class="status-text-color block-span">UPCOMING ({{upcoming.count}})</span>
+            <span class="status-text-color block-span m-t-15">{{upcoming.amount}}</span>
+        </div>
+        <div class="status-div-width enquiry-status-div" style="background-color: {{all.color}}">
+            <span class="status-text-color block-span">ALL ({{all.count}})</span>
+            <span class="status-text-color block-span m-t-15">{{all.amount}}</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-item row-first-field-width">
+            <input type="text" id="info" ng-model="lead.info" class="enquiry-browse-input p-b-5 m-t-25" placeholder="Name/Location/Primary Contact">
+        </div>
+        <div class="form-item">
+            <select id="userType" ng-model="lead.userType" class="enquiry-browse-input p-b-10 m-t-25 width-200">
+              <option value="">Assigned</option>
+              <option value="guest">Guest</option>
+              <option value="admin">Admin</option>
+              <option value="employee">Employee</option>
+            </select>
+        </div>
+        <div class="form-item">
+            <select id="update" ng-model="lead.update" class="enquiry-browse-input p-b-10 m-t-25 width-200">
+              <option value="">Ativity status</option>
+              <option value="day">1 day ago</option>
+              <option value="week">1 week ago</option>
+              <option value="month">1 month ago</option>
+            </select>
+        </div>
+        <div class="form-item row-first-field-width">
+            <input type="text" id="comments" ng-model="lead.comments" class="enquiry-browse-input p-b-5 m-t-25" placeholder="Comments">
+        </div>
+        <div class="form-item">
+            <select id="branch" ng-model="lead.branch" class="enquiry-browse-input p-b-10 m-t-25 width-200">
+            <option value="">Branch</option>
+            <option value="guest">Guest</option>
+            <option value="admin">Admin</option>
+            <option value="employee">Employee</option>
+            </select>
+        </div>
+        <div class="form-item">
+            <select id="role" ng-model="lead.role" class="enquiry-browse-input p-b-10 m-t-25 width-200">
+            <option value="">Role</option>
+            <option value="day">1 day ago</option>
+            <option value="week">1 week ago</option>
+            <option value="month">1 month ago</option>
+            </select>
+        </div>
+    </div>
+
+    <div>
+        <table class="table enquiry-table ">
+          <thead>
+            <tr>
+              <th>Client Name/Location</th>
+              <th>Assigned User/Activity Status</th>
+              <th>Follow-up Type</th>
+              <th>Activity Remarks</th>
+              <th>Amount</th>
+              <th>Created</th>
+              <th>Updated</th>
+              <th>Follow up</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="enquiry in enquiries">
+              <td>{{enquiry.nameLoc}}</td>
+              <td>{{enquiry.userStatus}}</td>
+              <td>{{enquiry.type}}</td>
+              <td>{{enquiry.remarks}}</td>
+              <td>{{enquiry.amount}}</td>
+              <td>{{enquiry.created}}</td>
+              <td>{{enquiry.updated}}</td>
+              <td>{{enquiry.followUp}}</td>
+              <td>{{enquiry.source}}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>

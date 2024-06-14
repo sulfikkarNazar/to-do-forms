@@ -60,4 +60,22 @@
             </div>
         </div>
     </div>
+    <div class="address-item static-field-div">
+        <input type="text" class="static-field" class="form-control" readonly>
+    </div>
+    <div class="right-side-inputs">
+        <div class="display-flex right-input-fields-width" ng-repeat="field in rightSideInputFields">
+            <div class="radio-buttons" ng-if="field.showRadioButtons">
+                <label class="second-row-label discount-radio-label">Discount</label>
+                <div class="radio-button-group">
+                    <input type="radio" id="{{field.id}}-perc" ng-model="lead[field.id + 'Option']" value="perc">
+                    <label for="{{field.id}}-perc" class="radio-button-input-label">%</label>
+                    <input type="radio" id="{{field.id}}-amount" ng-model="lead[field.id + 'Option']" value="amount">
+                    <label for="{{field.id}}-amount">Amount</label>
+                </div>
+            </div>
+            <label for="{{field.id}}" class="second-row-label" ng-if="!field.showRadioButtons">{{field.label}}</label>
+            <input type="number" id="{{field.id}}" ng-model="lead[field.id]" class="form-control" ng-disabled="isFieldDisabled(field.id)" ng-style="{'background-color': setFieldBackgroundColor(field.id)}">
+        </div>
+    </div>
 </div>
