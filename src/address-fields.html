@@ -1,42 +1,42 @@
 <div class="form-group">
     <div class="address-item">
-        <label for="address" class="second-row-label required-field">Address</label>
-        <input type="text" id="address" ng-model="lead.address" class="form-control" placeholder="Address">
+        <label for="address{{$id}}" class="second-row-label required-field">Address</label>
+        <input type="text" id="address{{$id}}" ng-model="lead.address" class="form-control" placeholder="Address">
     </div>
     <div class="address-item address-fields-width">
-        <label for="houseNo" class="second-row-label required-field">House No/ Building</label>
-        <input type="date" id="houseNo" ng-model="lead.houseNo" class="form-control" placeholder="House No/ Building">
+        <label for="houseNo{{$id}}" class="second-row-label required-field">House No/ Building</label>
+        <input type="text" id="houseNo{{$id}}" ng-model="lead.houseNo" class="form-control" placeholder="House No/ Building">
     </div>
     <div class="address-item address-fields-width">
-        <label for="landmark" class="second-row-label">Landmark</label>
-        <input type="text" id="landmark" ng-model="lead.landmark" class="form-control" placeholder="Landmark">
+        <label for="landmark{{$id}}" class="second-row-label">Landmark</label>
+        <input type="text" id="landmark{{$id}}" ng-model="lead.landmark" class="form-control" placeholder="Landmark">
     </div>
     <div class="address-item">
-        <label for="pin" class="second-row-label required-field">PIN Code</label>
-        <input type="text" id="pin" ng-model="lead.pin" class="form-control" placeholder="PIN Code">
+        <label for="pin{{$id}}" class="second-row-label required-field">PIN Code</label>
+        <input type="text" id="pin{{$id}}" ng-model="lead.pin" class="form-control" placeholder="PIN Code">
     </div>
     <div class="address-item address-fields-width">
-        <label for="city" class="second-row-label required-field">City</label>
-        <input type="text" id="city" ng-model="lead.city" class="form-control" placeholder="City">
+        <label for="city{{$id}}" class="second-row-label required-field">City</label>
+        <input type="text" id="city{{$id}}" ng-model="lead.city" class="form-control" placeholder="City">
     </div>
     <div class="address-item address-fields-width">
-        <label for="block" class="second-row-label required-field">Block</label>
-        <input type="text" id="block" ng-model="lead.block" class="form-control" placeholder="Block">
+        <label for="block{{$id}}" class="second-row-label required-field">Block</label>
+        <input type="text" id="block{{$id}}" ng-model="lead.block" class="form-control" placeholder="Block">
     </div>
     <div class="address-item address-fields-width">
-        <label for="country" class="second-row-label required-field">Country</label>
-        <select id="country" ng-model="lead.country" class="form-control" placeholder="Select Country">
-          <option value="">Select Country</option>
-          <option value="india">India</option>
-          <option value="us">USA</option>
+        <label for="country{{$id}}" class="second-row-label required-field">Country</label>
+        <select id="country{{$id}}" ng-model="lead.country" class="form-control" placeholder="Select Country">
+            <option value="">Select Country</option>
+            <option value="india">India</option>
+            <option value="us">USA</option>
         </select>
     </div>
     <div class="address-item address-fields-width">
-        <label for="state" class="second-row-label required-field">State</label>
-        <select id="state" ng-model="lead.country" class="form-control" placeholder="Select state">
-          <option value="">Select state</option>
-          <option value="kerala">Kerala</option>
-          <option value="tamilnadu">Tamilnadu</option>
+        <label for="state{{$id}}" class="second-row-label required-field">State</label>
+        <select id="state{{$id}}" ng-model="lead.state" class="form-control" placeholder="Select state">
+            <option value="">Select state</option>
+            <option value="kerala">Kerala</option>
+            <option value="tamilnadu">Tamilnadu</option>
         </select>
     </div>
 </div>

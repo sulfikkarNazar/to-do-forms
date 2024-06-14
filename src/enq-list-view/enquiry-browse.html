@@ -65,7 +65,7 @@
             <input type="text" id="info" ng-model="lead.info" class="enquiry-browse-input p-b-5 m-t-25" placeholder="Name/Location/Primary Contact">
         </div>
         <div class="form-item">
-            <select id="userType" ng-model="lead.userType" class="enquiry-browse-input p-b-10 m-t-25 width-200">
+            <select id="assigned" ng-model="lead.assigned" class="enquiry-browse-input p-b-10 m-t-25 width-200">
               <option value="">Assigned</option>
               <option value="guest">Guest</option>
               <option value="admin">Admin</option>
@@ -73,7 +73,7 @@
             </select>
         </div>
         <div class="form-item">
-            <select id="update" ng-model="lead.update" class="enquiry-browse-input p-b-10 m-t-25 width-200">
+            <select id="activityStatus" ng-model="lead.activityStatus" class="enquiry-browse-input p-b-10 m-t-25 width-200">
               <option value="">Ativity status</option>
               <option value="day">1 day ago</option>
               <option value="week">1 week ago</option>
@@ -99,7 +99,10 @@
             <option value="month">1 month ago</option>
             </select>
         </div>
-        <div class="search-icon-color m-t-35"><i class="fa fa-search" aria-hidden="true"></i></div>
+        <div class="m-t-35 display-flex">
+            <div class="search-icon-color"><i class="fa fa-search" aria-hidden="true"></i></div>
+            <div class="sync-icon"><i class="fas fa-sync" aria-hidden="true"></i></div>
+        </div>
     </div>
 
     <div>
